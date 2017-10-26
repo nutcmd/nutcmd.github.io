@@ -1,0 +1,104 @@
+<HTML>
+    <HEAD>
+        <TITLE>NiHonnGo</TITLE>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1,maximum-scale=1,viewport-fit=cover">
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+        <style>
+            body
+            {
+                background-color: black;
+            }
+            #deviceName
+            {
+                color: white;
+            }
+            #deviceName::after
+            {
+                content: 'Browser';
+            }
+            /* iPhone 4s */
+            @media (device-width:320px) and (device-height:480px) and (orientation: portrait)
+            {
+                body
+                {
+                    background-color: pink;
+                }
+            }
+            /* iPhone X */
+            @media (device-height: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait)
+            {
+                body
+                {
+                    background-image:url('iphonex.jpg');
+                    background-color: red;
+                    background-size: 375px 812px !important;
+                    background-repeat:no-repeat;
+                    
+                    /*
+                    padding-top: constant(safe-area-inset-top);
+                    padding-right: constant(safe-area-inset-right);
+                    padding-bottom: constant(safe-area-inset-bottom);
+                    padding-left: constant(safe-area-inset-left);
+                    */
+                }
+            }
+            /* iPhone 8 Plus */
+            @media (device-height: 736px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait)
+            {
+                body
+                {
+                    background: purple;
+                }
+            }
+            /* iPhone 8 */
+            @media (device-height: 667px) and (-webkit-min-device-pixel-ratio: 2)
+            {
+                body
+                {
+                    background: gray;
+                }
+            }
+            /* iPhone 5s */
+            @media (device-height: 568px) and (-webkit-min-device-pixel-ratio: 2)  and (orientation: portrait)
+            {
+                body
+                {
+                    background: yellow;
+                }
+            }
+            /* iPad */
+            @media (device-width: 768px) and (device-height: 1024px) and (orientation: portrait)
+            {
+                body
+                {
+                    background: blue;
+                }
+                #deviceName::after
+                {
+                    content: 'iPad';
+                }
+            }
+            /* iPad Pro 10.5 */
+            @media (device-width: 834px) and (device-height: 1112px) and (orientation: portrait)
+            {
+                body
+                {
+                    background: orange;
+                }
+            }
+            /* iPad Pro */
+            @media (device-width: 1024px) and (device-height: 1366px) and (orientation: portrait)
+            {
+                body
+                {
+                    background: red;
+                }
+            }
+        </style>
+    </HEAD>
+    <body>
+        <div id="deviceName">device:</div>
+    </body>
+</html>
+
