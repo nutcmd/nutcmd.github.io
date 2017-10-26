@@ -26,7 +26,7 @@
                 }
             }
             /* iPhone X */
-            @media (device-height: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait)
+            @media (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)
             {
                 body
                 {
@@ -44,7 +44,7 @@
                 }
             }
             /* iPhone 8 Plus */
-            @media (device-height: 736px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait)
+            @media (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)
             {
                 body
                 {
@@ -52,7 +52,7 @@
                 }
             }
             /* iPhone 8 */
-            @media (device-height: 667px) and (-webkit-min-device-pixel-ratio: 2)
+            @media (device-height: 667px) and (-webkit-device-pixel-ratio: 2)
             {
                 body
                 {
@@ -60,7 +60,7 @@
                 }
             }
             /* iPhone 5s */
-            @media (device-height: 568px) and (-webkit-min-device-pixel-ratio: 2)  and (orientation: portrait)
+            @media (device-height: 568px) and (-webkit-device-pixel-ratio: 2)  and (orientation: portrait)
             {
                 body
                 {
@@ -105,6 +105,30 @@
                 body
                 {
                     background: red;
+                }
+            }
+            /* Android 320x640 */
+            @media (device-width: 320px) and (device-height: 640px) and (orientation: portrait)
+            {
+                body
+                {
+                    background: brown;
+                }
+                #deviceName::after
+                {
+                    content: 'Android 320x640';
+                }
+            }
+            /* Android 360x640 */
+            @media (device-width: 360px) and (device-height: 640px) and (orientation: portrait)
+            {
+                body
+                {
+                    background: purple;
+                }
+                #deviceName::after
+                {
+                    content: 'Android 360x640';
                 }
             }
         </style>
