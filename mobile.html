@@ -92,7 +92,7 @@
                 background-image: url('loading.png');
                 animation: loading 700ms steps(20) infinite;
             }
-            
+           
             /* iPhone 4s */
             @media (device-width:320px) and (device-height:480px) and (orientation: portrait)
             {
@@ -148,14 +148,20 @@
                 }
                 #listContent
                 {
-                    height: 200px;
-                    width: 300px;
-                    margin: auto;
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
                 }
                 .content
                 {
+                    margin: auto;
+                    height: 200px;
+                    width: 300px;
                     overflow: auto;
                 }
+                
             }
             /* iPhone 5s */
             @media (device-height: 568px) and (-webkit-min-device-pixel-ratio: 2)  and (orientation: portrait)
