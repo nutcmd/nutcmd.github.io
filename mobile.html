@@ -141,6 +141,8 @@
                     width: 375px;
                     height: 667px;
                     background-color: red;
+                    left: -375;
+                    transition: left .5s linear;
                 }
                 #listContent
                 {
@@ -267,8 +269,9 @@
                 if(style.display == "none")
                 {
                     panel.style.display = "inline-block";
+                    panel.style.left = "0px";
                 }else{
-                    panel.style.display = "none";
+                    panel.style.left = "-375px";
                 }            
             }
             window.onload = function ()
@@ -278,15 +281,6 @@
                     if(!(event.target.id == "article"))
                         event.preventDefault();
                 });
-                /*
-                var listContent = document.getElementById("listContent");
-                listContent.addEventListener("touchmove", function(event){
-                    event.stopPropagation();
-                    event.preventDefault();
-
-                    console.log("-- touchmove2 --");
-                });*/
-                
             }
             
         </script>
@@ -299,7 +293,7 @@
         <div id="loadingPanel2">
             <div id="loading2"></div>
         </div>
-        <div id="myPanel"></div>
+        
         <div id="listContent">
             <div id="article">
                     米アップルの新型スマートフォン「ｉＰｈｏｎｅＸ（アイフォーンテン）」の予約受け付けが２７日、携帯大手３社で始まった。先月発売の「８」「８プラス」を買い控えたファンもいるとみられる中、調達不足が危惧され、来月３日の発売日に在庫が不足することも懸念される。
@@ -311,6 +305,7 @@
                     　ａｕは顧客が利用したデータ量に応じて月々の料金が変動する「ピタットプラン」と、４８回払いで２年後に機種変更すると端末代金の残額支払いが不要になるプログラムを選ぶと、月額料金がおさえられる。
             </div>
         </div>
+        <div id="myPanel"></div>
         <div id="sample1" onclick="toggleSample1();">sample1</div>
         <div id="sample2" onclick="toggleSample2();">sample2</div>
         <div id="myPanelBtn" ontouchstart="toggleMyPanel();">myPanel</div>
