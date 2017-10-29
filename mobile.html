@@ -92,6 +92,7 @@
                 background-image: url('loading.png');
                 animation: loading 700ms steps(20) infinite;
             }
+            
             /* iPhone 4s */
             @media (device-width:320px) and (device-height:480px) and (orientation: portrait)
             {
@@ -140,6 +141,16 @@
                     width: 375px;
                     height: 667px;
                     background-color: red;
+                }
+                #listContent
+                {
+                    height: 200px;
+                    width: 300px;
+                    margin: auto;
+                }
+                #listContent .content
+                {
+                    overflow: auto;
                 }
             }
             /* iPhone 5s */
@@ -271,6 +282,17 @@
             <div id="loading2"></div>
         </div>
         <div id="myPanel"></div>
+        <div id="listContent">
+            <div class="content">
+                    米アップルの新型スマートフォン「ｉＰｈｏｎｅＸ（アイフォーンテン）」の予約受け付けが２７日、携帯大手３社で始まった。先月発売の「８」「８プラス」を買い控えたファンもいるとみられる中、調達不足が危惧され、来月３日の発売日に在庫が不足することも懸念される。
+                    
+                    　各社の端末代金と通信料の合計の月額負担を比較すると、２４回払いで通話が５分、データ通信量５ギガバイトで他社からの乗り換えの場合、ＮＴＴドコモは１万４１３円、ＫＤＤＩ（ａｕ）は９８３５円、ソフトバンクは９８１０円となる。ただ、各社とも独自のプランや割引を用意しており、どの社が最安値になるかは使用形態などによって変わる。
+                    
+                    　ドコモはＸ発売に合わせ、購入から１３カ月目に機種変更した場合、最大６万円分がポイント還元されるキャンペーンを導入。家族で２台以上購入すると適用される割引などもある。
+                    
+                    　ａｕは顧客が利用したデータ量に応じて月々の料金が変動する「ピタットプラン」と、４８回払いで２年後に機種変更すると端末代金の残額支払いが不要になるプログラムを選ぶと、月額料金がおさえられる。
+            </div>
+        </div>
         <div id="sample1" onclick="toggleSample1();">sample1</div>
         <div id="sample2" onclick="toggleSample2();">sample2</div>
         <div id="myPanelBtn" ontouchstart="toggleMyPanel();">myPanel</div>
