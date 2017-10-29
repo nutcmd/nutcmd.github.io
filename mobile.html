@@ -306,7 +306,9 @@
             {
                 
                 console.log("sayHello");
-                
+                speechSynthesis.speak(new SpeechSynthesisUtterance('Hello'));
+
+                /*
                 var speech = new SpeechSynthesisUtterance();
                 speech.text = "Hello";
                 speech.volume = 1; // 0 to 1
@@ -315,7 +317,7 @@
                 speech.lang = "en-US";
                 speechSynthesis.speak(speech);
                 console.log(speech);
-                
+                */
                 
             }
         </script>
