@@ -296,9 +296,10 @@
             function sayHello()
             {
                 console.log("sayHello");
-                //var msg = new SpeechSynthesisUtterance('Hello');
-                //window.speechSynthesis.speak(msg);
+                var msg = new SpeechSynthesisUtterance('Hello');
+                window.speechSynthesis.speak(msg);
 
+                /*
                 var speech = new SpeechSynthesisUtterance();
                 speech.text = "Hello";
                 speech.volume = 1; // 0 to 1
@@ -307,6 +308,7 @@
                 speech.lang = "en-US";
                 console.log(speech);
                 speechSynthesis.speak(speech);
+                */
             }
         </script>
     </HEAD>
@@ -331,7 +333,7 @@
             </div>
         </div>
         <div id="myPanel">
-            <div id="tts" ontouchstart="sayHello();">sayHello</div>
+            <div id="tts" onclick="sayHello();">sayHello</div>
         </div>
         <div id="sample1" onclick="toggleSample1();">sample1</div>
         <div id="sample2" onclick="toggleSample2();">sample2</div>
