@@ -12,6 +12,11 @@
                 -webkit-touch-callout: none;
                 -webkit-user-select: none;
                 -webkit-tap-highlight-color: rgba(0,0,0,0);
+
+                /*
+                overflow: auto;
+                -webkit-overflow-scrolling: touch;
+                */
             }
             #deviceName
             {
@@ -121,6 +126,14 @@
                 {
                     background: gray;
                 }
+                #myPanel
+                {
+                    position: absolute;
+                    display: none;
+                    width: 320px;
+                    height: 667px;
+                    background-color: red;
+                }
             }
             /* iPhone 5s */
             @media (device-height: 568px) and (-webkit-min-device-pixel-ratio: 2)  and (orientation: portrait)
@@ -222,6 +235,17 @@
                     sample.style.visibility = "hidden";
                 }
             }
+            function toggleMyPanel()
+            {
+                var panel = document.getElementById("myPanel");
+                var style = window.getComputedStyle(panel);
+                if(style.display == "none")
+                {
+                    panel.style.display = "inline-block";
+                }else{
+                    panel.style.display = "none";
+                }            
+            }
         </script>
     </HEAD>
     <body>
@@ -232,8 +256,10 @@
         <div id="loadingPanel2">
             <div id="loading2"></div>
         </div>
+        <div id="myPanel"></div>
         <div id="sample1" onclick="toggleSample1();">sample1</div>
         <div id="sample2" onclick="toggleSample2();">sample2</div>
+        <div id="myPanelBtn" ontouchstart="toggleMyPanel();">myPanel</div>
     </body>
 </html>
 
