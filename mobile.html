@@ -295,8 +295,17 @@
             }
             function sayHello()
             {
-                var msg = new SpeechSynthesisUtterance('Hello');
-                window.speechSynthesis.speak(msg);
+                console.log("sayHello");
+                //var msg = new SpeechSynthesisUtterance('Hello');
+                //window.speechSynthesis.speak(msg);
+
+                var speech = new SpeechSynthesisUtterance();
+                speech.text = "Hello";
+                speech.volume = 1; // 0 to 1
+                speech.rate = 1; // 0.1 to 9
+                speech.pitch = 1; // 0 to 2, 1=normal
+                speech.lang = "en-US";
+                speechSynthesis.speak(speech);
             }
         </script>
     </HEAD>
