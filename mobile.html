@@ -15,7 +15,24 @@
             }
             #deviceName
             {
+                position: absolute;
+                left: 10px;
                 color: white;
+            }
+            #sample1,#sample2
+            {
+                position: absolute;
+                right: 10px;
+                width: 50px;
+                height: 20px;
+                border: 1px solid white;
+                padding: 10px;
+                text-align: center;
+                color: white;
+            }
+            #sample2
+            {
+                right: 100px;
             }
             #deviceName::after
             {
@@ -26,18 +43,42 @@
 	            from { background-position: 0px; }
 	            to { background-position: -1600px; }
             } 
+            #loadingPanel1
+            {
+                position: absolute;
+                display: flex;
+                align-items: center;
+                width: 100%;
+                height: 100%;
+                visibility: hidden;
+            }
             #loading
             {
-                margin: 0 auto;
+                margin: auto;
                 width: 80px;
                 height: 80px;
                 background-image: url('loading.png');
                 animation: loading 700ms steps(20) infinite;
-            }
-            #loadingPanel
+            }            
+            #loadingPanel2
             {
+                position: absolute;
                 width: 100%;
                 height: 100%;
+                visibility: hidden;
+            }
+            #loading2
+            {
+                position: absolute;
+                width: 80px;
+                height: 80px;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                margin: auto;
+                background-image: url('loading.png');
+                animation: loading 700ms steps(20) infinite;
             }
             /* iPhone 4s */
             @media (device-width:320px) and (device-height:480px) and (orientation: portrait)
@@ -154,12 +195,45 @@
                 }
             }
         </style>
+        <script>
+            function toggleSample1()
+            {
+                var sample = document.getElementById("loadingPanel1");
+                console.log(sample.style.visibility);
+                var style = window.getComputedStyle(sample);
+                console.log(style.visibility);
+                if(style.visibility == "hidden")
+                {
+                    sample.style.visibility = "visible";
+                }else{
+                    sample.style.visibility = "hidden";
+                }
+            }
+            function toggleSample2()
+            {
+                var sample = document.getElementById("loadingPanel2");
+                console.log(sample.style.visibility);
+                var style = window.getComputedStyle(sample);
+                console.log(style.visibility);
+                if(style.visibility == "hidden")
+                {
+                    sample.style.visibility = "visible";
+                }else{
+                    sample.style.visibility = "hidden";
+                }
+            }
+        </script>
     </HEAD>
     <body>
         <div id="deviceName">device:</div>
-        <div id="loadingPanel">
+        <div id="loadingPanel1">
             <div id="loading"></div>
         </div>
+        <div id="loadingPanel2">
+            <div id="loading2"></div>
+        </div>
+        <div id="sample1" onclick="toggleSample1();">sample1</div>
+        <div id="sample2" onclick="toggleSample2();">sample2</div>
     </body>
 </html>
 
