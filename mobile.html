@@ -160,6 +160,17 @@
                     width: 300px;
                     overflow: auto;
                 }
+                #tts
+                {
+                    position: absolute;
+                    left: 10px;
+                    width: 50px;
+                    height: 20px;
+                    border: 1px solid white;
+                    padding: 10px;
+                    text-align: center;
+                    color: white;
+                }
                 
             }
             /* iPhone 5s */
@@ -282,7 +293,11 @@
                         event.preventDefault();
                 });
             }
-            
+            function sayHello()
+            {
+                var msg = new SpeechSynthesisUtterance('Hello');
+                window.speechSynthesis.speak(msg);
+            }
         </script>
     </HEAD>
     <body>
@@ -305,7 +320,9 @@
                     　ａｕは顧客が利用したデータ量に応じて月々の料金が変動する「ピタットプラン」と、４８回払いで２年後に機種変更すると端末代金の残額支払いが不要になるプログラムを選ぶと、月額料金がおさえられる。
             </div>
         </div>
-        <div id="myPanel"></div>
+        <div id="myPanel">
+            <div id="tts" ontouchstart="sayHello();">sayHello</div>
+        </div>
         <div id="sample1" onclick="toggleSample1();">sample1</div>
         <div id="sample2" onclick="toggleSample2();">sample2</div>
         <div id="myPanelBtn" ontouchstart="toggleMyPanel();">myPanel</div>
