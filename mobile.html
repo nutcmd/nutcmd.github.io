@@ -16,10 +16,6 @@
                 -webkit-user-select: none;
                 -webkit-tap-highlight-color: rgba(0,0,0,0);
                 margin: 0;
-                /*
-                overflow: auto;
-                -webkit-overflow-scrolling: touch;
-                */
             }
             #deviceName
             {
@@ -156,6 +152,7 @@
                 }
                 .content
                 {
+                    -webkit-overflow-scrolling: touch;
                     margin: auto;
                     height: 200px;
                     width: 300px;
@@ -282,6 +279,8 @@
                 var listContent = document.getElementById("listContent");
                 listContent.addEventListener("touchmove", function(event){
                     event.stopPropagation();
+                    event.preventDefault();
+
                     console.log("-- touchmove --");
                 });
                 
