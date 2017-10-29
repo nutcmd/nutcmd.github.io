@@ -9,15 +9,8 @@
         <meta name="apple-mobile-web-app-title" content="NutcMD" />
         
         <style>
-            html 
-            {
-                height  : 100%;
-                overflow: hidden;
-            }
             body
             {
-                height  : 100%;
-                overflow: auto;
                 background-color: black;
                 -webkit-touch-callout: none;
                 -webkit-user-select: none;
@@ -260,6 +253,13 @@
                     panel.style.display = "none";
                 }            
             }
+            window.onload = function ()
+            {
+                document.addEventListener("touchmove", function(event){
+                    event.preventDefault();
+                });
+            }
+            
         </script>
     </HEAD>
     <body>
