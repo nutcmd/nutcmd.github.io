@@ -150,7 +150,7 @@
                     display: flex;
                     align-items: center;
                 }
-                .content
+                #article
                 {
                     -webkit-overflow-scrolling: touch;
                     margin: auto;
@@ -275,7 +275,8 @@
             {
                 document.addEventListener("touchmove", function(event){
                     console.log(event.target);
-                    event.preventDefault();
+                    if(!(event.target.id == "article"))
+                        event.preventDefault();
                 });
                 /*
                 var listContent = document.getElementById("listContent");
@@ -300,7 +301,7 @@
         </div>
         <div id="myPanel"></div>
         <div id="listContent">
-            <div class="content">
+            <div id="article">
                     米アップルの新型スマートフォン「ｉＰｈｏｎｅＸ（アイフォーンテン）」の予約受け付けが２７日、携帯大手３社で始まった。先月発売の「８」「８プラス」を買い控えたファンもいるとみられる中、調達不足が危惧され、来月３日の発売日に在庫が不足することも懸念される。
                     
                     　各社の端末代金と通信料の合計の月額負担を比較すると、２４回払いで通話が５分、データ通信量５ギガバイトで他社からの乗り換えの場合、ＮＴＴドコモは１万４１３円、ＫＤＤＩ（ａｕ）は９８３５円、ソフトバンクは９８１０円となる。ただ、各社とも独自のプランや割引を用意しており、どの社が最安値になるかは使用形態などによって変わる。
