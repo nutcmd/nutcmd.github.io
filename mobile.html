@@ -319,6 +319,8 @@
                 speech.lang = "ja-JP";
                 speechSynthesis.speak(speech);
                 console.log(speech);
+
+                chrome.tts.speak('Hello, world.', {'rate': 2.0});
             }
         </script>
     </HEAD>
