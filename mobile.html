@@ -274,6 +274,7 @@
             window.onload = function ()
             {
                 document.addEventListener("touchmove", function(event){
+                    console.log(event.targetTouches);
                     event.preventDefault();
                 });
                 var listContent = document.getElementById("listContent");
