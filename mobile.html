@@ -17,6 +17,18 @@
             {
                 content: 'Browser';
             }
+            @-webkit-keyframes loading
+            {
+	            from { background-position: 0px; }
+	            to { background-position: -1600px; }
+            } 
+            #loading
+            {
+                width: 80px;
+                height: 80px;
+                background-image: url('loading.png');
+                animation: loading 700ms steps(20) infinite;
+            }
             /* iPhone 4s */
             @media (device-width:320px) and (device-height:480px) and (orientation: portrait)
             {
@@ -135,6 +147,7 @@
     </HEAD>
     <body>
         <div id="deviceName">device:</div>
+        <div id="loading"></div>
     </body>
 </html>
 
