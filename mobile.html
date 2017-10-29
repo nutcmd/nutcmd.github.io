@@ -88,7 +88,43 @@
                 background-image: url('loading.png');
                 animation: loading 700ms steps(20) infinite;
             }
-           
+            #myPanel
+                {
+                    position: absolute;
+                    display: inline-block;
+                    width: 375px;
+                    height: 667px;
+                    background-color: red;
+                    left: -375;
+                    transition: left .5s linear;
+                }
+                #listContent
+                {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                }
+                #article
+                {
+                    -webkit-overflow-scrolling: touch;
+                    margin: auto;
+                    height: 200px;
+                    width: 300px;
+                    overflow: auto;
+                }
+                #tts
+                {
+                    position: absolute;
+                    left: 10px;
+                    width: 50px;
+                    height: 20px;
+                    border: 1px solid white;
+                    padding: 10px;
+                    text-align: center;
+                    color: white;
+                }
             /* iPhone 4s */
             @media (device-width:320px) and (device-height:480px) and (orientation: portrait)
             {
@@ -136,42 +172,9 @@
                 }
                 #myPanel
                 {
-                    position: absolute;
-                    display: inline-block;
                     width: 375px;
                     height: 667px;
-                    background-color: red;
-                    left: -375;
-                    transition: left .5s linear;
                 }
-                #listContent
-                {
-                    position: absolute;
-                    width: 100%;
-                    height: 100%;
-                    display: flex;
-                    align-items: center;
-                }
-                #article
-                {
-                    -webkit-overflow-scrolling: touch;
-                    margin: auto;
-                    height: 200px;
-                    width: 300px;
-                    overflow: auto;
-                }
-                #tts
-                {
-                    position: absolute;
-                    left: 10px;
-                    width: 50px;
-                    height: 20px;
-                    border: 1px solid white;
-                    padding: 10px;
-                    text-align: center;
-                    color: white;
-                }
-                
             }
             /* iPhone 5s */
             @media (device-height: 568px) and (-webkit-min-device-pixel-ratio: 2)  and (orientation: portrait)
@@ -243,6 +246,11 @@
                 #deviceName::after
                 {
                     content: 'Android 360x640';
+                }
+                #myPanel
+                {
+                    width: 360px;
+                    height: 640px;
                 }
             }
         </style>
