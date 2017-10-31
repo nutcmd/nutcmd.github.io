@@ -1,0 +1,99 @@
+<HTML>
+    <HEAD>
+        <TITLE>Slide</TITLE>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1,maximum-scale=1">
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+        <meta name="apple-mobile-web-app-capable" content="yes">        
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="apple-mobile-web-app-title" content="Slide" />
+        
+        <style>
+            body
+            {
+                background-color: black;
+                -webkit-touch-callout: none;
+                -webkit-user-select: none;
+                -webkit-tap-highlight-color: rgba(0,0,0,0);
+                margin: 0;
+            }
+            #slide
+            {
+                position: absolute;
+                width: 1875px;
+                height: 667px;
+                left: 0px;
+                transition: left 200ms ease-out;
+            }
+            .panel
+            {
+                display: inline-block;
+                width: 375;
+                height: 100%;
+                text-align: center;
+                background-color: white;
+                color: black;
+            }
+            #moveToLeft
+            {
+                position: fixed;
+                width: 30px;
+                height: 100%;
+                left: 0px;
+                top: 0px;
+                background-color: rgba(0,0,0,0.5);
+            }
+            #moveToRight
+            {
+                position: fixed;
+                width: 30px;
+                height: 100%;
+                right: 0px;
+                top: 0px;
+                background-color: rgba(0,0,0,0.5);
+            }
+        </style>
+        <script>
+            function moveToLeft()
+            {
+                var slide = document.getElementById("slide");
+                var style = window.getComputedStyle(slide);
+                if(style.left == "0px")
+                {
+                    return;
+                }else{
+                    console.log(style.left);
+                    console.log(parseInt(style.left));
+                    slide.style.left = (parseInt(style.left) + 375)+"px";
+                    console.log("-->"+parseInt(style.left));
+                }
+            }
+            function moveToRight()
+            {
+                var slide = document.getElementById("slide");
+                var style = window.getComputedStyle(slide);
+                if(style.left == "-1500px")
+                {
+                    return;
+                }else{
+                    console.log(style.left);
+                    console.log(parseInt(style.left));
+                    slide.style.left = (parseInt(style.left) - 375)+"px";
+                    console.log("-->"+parseInt(style.left));
+                }
+            }
+        </script>
+    </HEAD>
+    <body>
+        <div id="slide">
+            <div class="panel">1</div>
+            <div class="panel">2</div>
+            <div class="panel">3</div>
+            <div class="panel">4</div>
+            <div class="panel">5</div>
+        </div>
+        <div id="moveToLeft" onclick="moveToLeft();"></div>
+        <div id="moveToRight" onclick="moveToRight();"></div>>
+    </body>
+</html>
+
