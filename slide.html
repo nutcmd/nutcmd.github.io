@@ -28,7 +28,7 @@
                 transition: left 300ms ease-out;
                 margin: 0px;
                 padding: 0px;
-                background-color: yellow;
+                background-color: black;
             }
             .panel
             {
@@ -90,12 +90,11 @@
                
                 pageNumber--;
                 if(pageNumber == 0)
-                {
-                    slide.style.left = "0px";    
+                {  
                     pageNumber = 1;
-                }else{
-                    slide.style.left = "-"+((pageNumber-1) * 375)+"px";
                 }
+                
+                slide.style.left = "-"+((pageNumber-1) * 375)+"px";
             }
             function moveToRight()
             {
@@ -106,9 +105,10 @@
                 if(pageNumber == 6)
                 {
                     pageNumber = 5;
-                }else{
-                    slide.style.left = "-"+((pageNumber-1) * 375)+"px";
                 }
+                
+                slide.style.left = "-"+((pageNumber-1) * 375)+"px";
+                
             }
             function goToPage(page)
             {
