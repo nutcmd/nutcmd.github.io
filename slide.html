@@ -2,7 +2,7 @@
     <HEAD>
         <TITLE>Slide</TITLE>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1,maximum-scale=1">
+        <meta name="viewport" content="width=device-width,user-scalable=0,initial-scale=1,maximum-scale=1">
         <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
         <meta name="apple-mobile-web-app-capable" content="yes">        
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -47,20 +47,22 @@
             #moveToLeft
             {
                 position: fixed;
-                width: 30px;
+                width: 50px;
                 height: 100%;
                 left: 0px;
                 top: 0px;
-                background-color: rgba(0,0,0,0.5);
+                opacity: 0;
+                /*background-color: rgba(0,0,0,0.5);*/
             }
             #moveToRight
             {
                 position: fixed;
-                width: 30px;
+                width: 50px;
                 height: 100%;
                 right: 0px;
                 top: 0px;
-                background-color: rgba(0,0,0,0.5);
+                opacity: 0;
+                /*background-color: rgba(0,0,0,0.5);*/
             }
             #jump
             {
