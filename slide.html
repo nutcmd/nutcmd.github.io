@@ -20,12 +20,14 @@
             #slide
             {
                 position: absolute;
-                display: inline-block;
+                display: flex;
+                top: 0px;
                 left: 0px;
                 width: 1875px;
                 height: 667px;
                 transition: left 300ms ease-out;
-                margin: 0;
+                margin: 0px;
+                padding: 0px;
                 background-color: yellow;
             }
             .panel
@@ -36,7 +38,7 @@
                 text-align: center;
                 background-color: white;
                 color: red;
-                margin: -3px;
+                margin: 0px;
                 padding: 0px;
             }
             #moveToLeft
@@ -91,11 +93,11 @@
     </HEAD>
     <body>
         <div id="slide">
-            <div class="panel">1</div>
-            <div class="panel">2</div>
-            <div class="panel">3</div>
-            <div class="panel">4</div>
-            <div class="panel">5</div>
+            <span class="panel">1</span>
+            <span class="panel">2</span>
+            <span class="panel">3</span>
+            <span class="panel">4</span>
+            <span class="panel">5</span>
         </div>
         <div id="moveToLeft" onclick="moveToLeft();"></div>
         <div id="moveToRight" onclick="moveToRight();"></div>>
