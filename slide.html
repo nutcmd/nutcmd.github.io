@@ -37,9 +37,12 @@
                 height: 100%;
                 text-align: center;
                 background-color: white;
-                color: red;
+                color: black;
                 margin: 0px;
                 padding: 0px;
+                line-height: 667px;
+                font-size: 100px;
+
             }
             #moveToLeft
             {
@@ -59,35 +62,58 @@
                 top: 0px;
                 background-color: rgba(0,0,0,0.5);
             }
+            #jump
+            {
+                position: absolute;
+                bottom: 10px;
+                width: 100%;
+                text-align: center;
+            }
+            .jump
+            {
+                display: inline-block;
+                width: 50px;
+                height: 30px;
+                border: 1px solid black;
+                font-size: 20px;
+                line-height: 30px;
+                text-align: center;
+            }
         </style>
         <script>
+            var pageNumber = 1;
+
             function moveToLeft()
             {
                 var slide = document.getElementById("slide");
                 var style = window.getComputedStyle(slide);
-                if(style.left == "0px")
+               
+                pageNumber--;
+                if(pageNumber == 0)
                 {
-                    return;
+                    slide.style.left = "0px";    
+                    pageNumber = 1;
                 }else{
-                    console.log(style.left);
-                    console.log(parseInt(style.left));
-                    slide.style.left = (parseInt(style.left) + 375)+"px";
-                    console.log("-->"+parseInt(style.left));
+                    slide.style.left = "-"+((pageNumber-1) * 375)+"px";
                 }
             }
             function moveToRight()
             {
                 var slide = document.getElementById("slide");
                 var style = window.getComputedStyle(slide);
-                if(style.left == "-1500px")
+
+                pageNumber++;
+                if(pageNumber == 6)
                 {
-                    return;
+                    pageNumber = 5;
                 }else{
-                    console.log(style.left);
-                    console.log(parseInt(style.left));
-                    slide.style.left = (parseInt(style.left) - 375)+"px";
-                    console.log("-->"+parseInt(style.left));
+                    slide.style.left = "-"+((pageNumber-1) * 375)+"px";
                 }
+            }
+            function goToPage(page)
+            {
+                pageNumber = page;
+                slide.style.left = "-"+((page-1) * 375)+"px";
             }
         </script>
     </HEAD>
@@ -101,6 +127,13 @@
         </div>
         <div id="moveToLeft" onclick="moveToLeft();"></div>
         <div id="moveToRight" onclick="moveToRight();"></div>>
+        <div id="jump">
+            <div class="jump" onclick="goToPage(1);">1</div>
+            <div class="jump" onclick="goToPage(2);">2</div>
+            <div class="jump" onclick="goToPage(3);">3</div>
+            <div class="jump" onclick="goToPage(4);">4</div>
+            <div class="jump" onclick="goToPage(5);">5</div>
+        </div>
     </body>
 </html>
 
