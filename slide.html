@@ -80,37 +80,37 @@
             }
         </style>
         <script>
-            var pageNumber = 1;
+            var panelNumber = 1;
 
             function moveToLeft()
             {
                 var slide = document.getElementById("slide");
                
-                pageNumber--;
-                if(pageNumber == 0)
+                panelNumber--;
+                if(panelNumber == 0)
                 {  
-                    pageNumber = 1;
+                    panelNumber = 1;
                 }
                 
-                slide.style.left = "-"+((pageNumber-1) * 375)+"px";
+                slide.style.left = "-"+((panelNumber-1) * 375)+"px";
             }
             function moveToRight()
             {
                 var slide = document.getElementById("slide");
 
-                pageNumber++;
-                if(pageNumber == 6)
+                panelNumber++;
+                if(panelNumber == 6)
                 {
-                    pageNumber = 5;
+                    panelNumber = 5;
                 }
                 
-                slide.style.left = "-"+((pageNumber-1) * 375)+"px";
+                slide.style.left = "-"+((panelNumber-1) * 375)+"px";
                 
             }
-            function goToPage(page)
+            function goToPanel(panel)
             {
-                pageNumber = page;
-                slide.style.left = "-"+((page-1) * 375)+"px";
+                panelNumber = panel;
+                slide.style.left = "-"+((panelNumber-1) * 375)+"px";
             }
         </script>
     </HEAD>
@@ -125,11 +125,11 @@
         <div id="moveToLeft" ontouchstart="moveToLeft();"></div>
         <div id="moveToRight" ontouchstart="moveToRight();"></div>>
         <div id="jump">
-            <div class="jump" ontouchstart="goToPage(1);">1</div>
-            <div class="jump" ontouchstart="goToPage(2);">2</div>
-            <div class="jump" ontouchstart="goToPage(3);">3</div>
-            <div class="jump" ontouchstart="goToPage(4);">4</div>
-            <div class="jump" ontouchstart="goToPage(5);">5</div>
+            <div class="jump" ontouchstart="goToPanel(1);">1</div>
+            <div class="jump" ontouchstart="goToPanel(2);">2</div>
+            <div class="jump" ontouchstart="goToPanel(3);">3</div>
+            <div class="jump" ontouchstart="goToPanel(4);">4</div>
+            <div class="jump" ontouchstart="goToPanel(5);">5</div>
         </div>
     </body>
 </html>
