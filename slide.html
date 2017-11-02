@@ -42,6 +42,7 @@
             #moveToLeft
             {
                 position: fixed;
+                cursor: pointer;
                 width: 50px;
                 height: 100%;
                 left: 0px;
@@ -52,6 +53,7 @@
             #moveToRight
             {
                 position: fixed;
+                cursor: pointer;
                 width: 50px;
                 height: 100%;
                 right: 0px;
@@ -83,7 +85,6 @@
             function moveToLeft()
             {
                 var slide = document.getElementById("slide");
-                var style = window.getComputedStyle(slide);
                
                 pageNumber--;
                 if(pageNumber == 0)
@@ -96,7 +97,6 @@
             function moveToRight()
             {
                 var slide = document.getElementById("slide");
-                var style = window.getComputedStyle(slide);
 
                 pageNumber++;
                 if(pageNumber == 6)
