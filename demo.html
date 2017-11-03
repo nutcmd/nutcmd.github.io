@@ -1,0 +1,138 @@
+<HTML>
+    <HEAD>
+        <TITLE>Slide</TITLE>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,user-scalable=0,initial-scale=1,maximum-scale=1">
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+        <meta name="apple-mobile-web-app-capable" content="yes">        
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="apple-mobile-web-app-title" content="Slide" />
+        
+        <style>
+            body
+            {
+                background-color: black;
+                -webkit-touch-callout: none;
+                -webkit-user-select: none;
+                -webkit-tap-highlight-color: rgba(0,0,0,0);
+                margin: 0;
+            }
+            #slide
+            {
+                position: absolute;
+                display: flex;
+                top: 0px;
+                left: 0px;
+                width: 1875px;
+                height: 667px;
+                transition: left 300ms ease-out;
+                background-color: black;
+            }
+            .panel
+            {
+                display: inline-block;
+                width: 375px;
+                height: 100%;
+                text-align: center;
+                background-color: white;
+                color: black;
+                line-height: 667px;
+                font-size: 100px;
+            }
+            #moveToLeft
+            {
+                position: fixed;
+                cursor: pointer;
+                width: 50px;
+                height: 100%;
+                left: 0px;
+                top: 0px;
+                opacity: 0;
+                /*background-color: rgba(0,0,0,0.5);*/
+            }
+            #moveToRight
+            {
+                position: fixed;
+                cursor: pointer;
+                width: 50px;
+                height: 100%;
+                right: 0px;
+                top: 0px;
+                opacity: 0;
+                /*background-color: rgba(0,0,0,0.5);*/
+            }
+            #btnGroup
+            {
+                position: fixed;
+                bottom: 10px;
+                width: 100%;
+                text-align: center;
+            }
+            .btn
+            {
+                display: inline-block;
+                width: 50px;
+                height: 30px;
+                border: 1px solid black;
+                font-size: 20px;
+                line-height: 30px;
+                text-align: center;
+            }
+        </style>
+        <script>
+            var panelNumber = 1;
+
+            function moveToLeft()
+            {
+                var slide = document.getElementById("slide");
+               
+                panelNumber--;
+                if(panelNumber == 0)
+                {  
+                    panelNumber = 1;
+                }
+                
+                slide.style.left = "-"+((panelNumber-1) * 375)+"px";
+            }
+            function moveToRight()
+            {
+                var slide = document.getElementById("slide");
+
+                panelNumber++;
+                if(panelNumber == 6)
+                {
+                    panelNumber = 5;
+                }
+                
+                slide.style.left = "-"+((panelNumber-1) * 375)+"px";
+                
+            }
+            function goToPanel(panel)
+            {
+                panelNumber = panel;
+                slide.style.left = "-"+((panelNumber-1) * 375)+"px";
+            }
+        </script>
+    </HEAD>
+    <body>
+        <div id="slide">
+            <span class="panel">1</span>
+            <span class="panel">2</span>
+            <span class="panel">3</span>
+            <span class="panel">4</span>
+            <span class="panel">5</span>
+        </div>
+        <div id="moveToLeft" ontouchstart="moveToLeft();"></div>
+        <div id="moveToRight" ontouchstart="moveToRight();"></div>>
+        <!--
+        <div id="btnGroup">
+            <div class="btn" ontouchstart="goToPanel(1);">1</div>
+            <div class="btn" ontouchstart="goToPanel(2);">2</div>
+            <div class="btn" ontouchstart="goToPanel(3);">3</div>
+            <div class="btn" ontouchstart="goToPanel(4);">4</div>
+            <div class="btn" ontouchstart="goToPanel(5);">5</div>
+        </div>
+        -->
+    </body>
+</html>
+
