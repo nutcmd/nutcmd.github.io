@@ -67,7 +67,7 @@
 				};
 
 				var textureLoader = new THREE.TextureLoader( manager );
-				var texture = textureLoader.load( 'obj/bunny.png' );
+				var texture = textureLoader.load( 'obj/Andy.png' );
 
 				// model
 
@@ -82,7 +82,7 @@
 				};
 
 				var loader = new THREE.OBJLoader( manager );
-				loader.load( 'obj/bunny.obj', function ( object ) {
+				loader.load( 'obj/Andy.obj', function ( object ) {
 
 					object.traverse( function ( child ) {
                                                 console.log("child:"+child);
