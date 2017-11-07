@@ -81,7 +81,7 @@
 				var onError = function ( xhr ) {
 				};
 
-                                /*
+                                
                                 var mtlLoader = new THREE.MTLLoader();
 				mtlLoader.setPath( 'obj/' );
                                 mtlLoader.load( 'Andy.mtl', function( materials ) 
@@ -91,12 +91,25 @@
 					objLoader.setMaterials( materials );
 					objLoader.setPath( 'obj/' );
 					objLoader.load( 'Andy.obj', function ( object ) {
-						//object.position.y = - 95;
+                                                //object.position.y = - 95;
+                                                object.traverse( function ( child ) {
+                                                console.log("child:"+child);
+
+                                                if ( child instanceof THREE.Mesh ) 
+                                                {
+                                                        console.log("texture:"+texture);
+
+							child.material.map = texture;
+
+						}
+
+					        } );
 						scene.add( object );
 					}, onProgress, onError );
                                 });
-                                */
+                                
 
+                                /*
 				var loader = new THREE.OBJLoader( manager );
 				loader.load( 'obj/Andy.obj', function ( object ) {
 
@@ -117,7 +130,7 @@
 					scene.add( object );
 
 				}, onProgress, onError );
-
+                                */
 				//
 
 				renderer = new THREE.WebGLRenderer();
