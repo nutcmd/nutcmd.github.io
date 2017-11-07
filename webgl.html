@@ -11,10 +11,8 @@
 				margin: 0px;
 				overflow: hidden;
 			}
-			.button { color: #f00; font-weight: bold; text-decoration: underline; cursor: pointer }
 		</style>
 	</head>
-
 	<body>
 		<script src="js/three.min.js"></script>
 		<script src="js/loaders/OBJLoader.js"></script>
@@ -24,8 +22,6 @@
 			var container;
 
 			var camera, scene, renderer;
-
-			var mouseX = 0, mouseY = 0;
 
 			var windowHalfX = window.innerWidth / 2;
 			var windowHalfY = window.innerHeight / 2;
@@ -91,7 +87,7 @@
 
 					} );
 
-					object.position.y = - 95;
+					//object.position.y = - 95;
 					scene.add( object );
 
 				}, onProgress, onError );
@@ -103,7 +99,7 @@
 				renderer.setSize( window.innerWidth, window.innerHeight );
 				container.appendChild( renderer.domElement );
 
-				document.addEventListener( 'mousemove', onDocumentMouseMove, false );
+				//document.addEventListener( 'mousemove', onDocumentMouseMove, false );
 
 				//
 
@@ -139,12 +135,13 @@
 
 			}
 
-			function render() {
+                        function render() 
+                        {
 
-				camera.position.x += ( mouseX - camera.position.x ) * .05;
-				camera.position.y += ( - mouseY - camera.position.y ) * .05;
+				//camera.position.x += ( mouseX - camera.position.x ) * .05;
+				//camera.position.y += ( - mouseY - camera.position.y ) * .05;
 
-				camera.lookAt( scene.position );
+				//camera.lookAt( scene.position );
 
 				renderer.render( scene, camera );
 
