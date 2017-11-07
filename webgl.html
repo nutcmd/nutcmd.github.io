@@ -17,7 +17,7 @@
                 <script src="js/three.min.js"></script>
                 <script src="js/OrbitControls.js"></script>                
 		<script src="js/loaders/OBJLoader.js"></script>
-
+                <script src="js/loaders/MTLLoader.js"></script>
 		<script>
 
 			var container;
@@ -39,7 +39,7 @@
 				document.body.appendChild( container );
 
 				camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
-                                camera.position.z = 10;
+                                camera.position.z = 3;
                                 
 
 				// scene
@@ -80,6 +80,22 @@
 
 				var onError = function ( xhr ) {
 				};
+
+                                /*
+                                var mtlLoader = new THREE.MTLLoader();
+				mtlLoader.setPath( 'obj/' );
+                                mtlLoader.load( 'Andy.mtl', function( materials ) 
+                                {
+					materials.preload();
+					var objLoader = new THREE.OBJLoader();
+					objLoader.setMaterials( materials );
+					objLoader.setPath( 'obj/' );
+					objLoader.load( 'Andy.obj', function ( object ) {
+						//object.position.y = - 95;
+						scene.add( object );
+					}, onProgress, onError );
+                                });
+                                */
 
 				var loader = new THREE.OBJLoader( manager );
 				loader.load( 'obj/Andy.obj', function ( object ) {
