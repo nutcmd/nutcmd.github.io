@@ -92,18 +92,7 @@
 					objLoader.setPath( 'obj/' );
 					objLoader.load( 'Andy.obj', function ( object ) {
                                                 //object.position.y = - 95;
-                                                object.traverse( function ( child ) {
-                                                console.log("child:"+child);
-
-                                                if ( child instanceof THREE.Mesh ) 
-                                                {
-                                                        console.log("texture:"+texture);
-
-							child.material.map = texture;
-
-						}
-
-					        } );
+                                                
 						scene.add( object );
 					}, onProgress, onError );
                                 });
