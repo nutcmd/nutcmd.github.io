@@ -81,8 +81,11 @@
 				loader.load( 'obj/bunny.obj', function ( object ) {
 
 					object.traverse( function ( child ) {
+                                                console.log("child:"+child);
 
-						if ( child instanceof THREE.Mesh ) {
+                                                if ( child instanceof THREE.Mesh ) 
+                                                {
+                                                        console.log("texture:"+texture);
 
 							child.material.map = texture;
 
