@@ -17,7 +17,6 @@
                 -webkit-tap-highlight-color: rgba(0,0,0,0);
                 margin: 0;
             }
-            
             /* Android 320x640 */
             @media (device-width: 320px) and (device-height: 640px) and (orientation: portrait)
             {
@@ -30,7 +29,25 @@
                     content: 'Android 320x640';
                 }
             }
+            /* Android 360x640 */
+            @media (device-width: 360px) and (device-height: 640px) and (orientation: portrait)
+            {
+                body
+                {
+                    background: purple;
+                }
+                #deviceName::after
+                {
+                    content: 'Android 360x640';
+                }
+                #myPanel
+                {
+                    width: 360px;
+                    height: 640px;
+                }
+            }
         </style>
+
         <script>
             function sayHello()
             {
