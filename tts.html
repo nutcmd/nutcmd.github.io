@@ -18,6 +18,18 @@
                 margin: 0;
             }
             
+            /* Android 320x640 */
+            @media (device-width: 320px) and (device-height: 640px) and (orientation: portrait)
+            {
+                body
+                {
+                    background: brown;
+                }
+                #deviceName::after
+                {
+                    content: 'Android 320x640';
+                }
+            }
         </style>
         <script>
             function sayHello()
