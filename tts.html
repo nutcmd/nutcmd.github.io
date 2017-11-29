@@ -1,0 +1,354 @@
+<HTML>
+    <HEAD>
+        <TITLE>NutcMD</TITLE>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1,maximum-scale=1">
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+        <meta name="apple-mobile-web-app-capable" content="yes">        
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="apple-mobile-web-app-title" content="NutcMD" />
+        
+        <style>
+            body
+            {
+                background-color: black;
+                -webkit-touch-callout: none;
+                -webkit-user-select: none;
+                -webkit-tap-highlight-color: rgba(0,0,0,0);
+                margin: 0;
+            }
+            #deviceName
+            {
+                position: absolute;
+                margin: auto;
+                bottom: 10px;
+                color: white;
+            }
+            #sample1,#sample2,#myPanelBtn
+            {
+                position: absolute;
+                right: 10px;
+                width: 50px;
+                height: 20px;
+                border: 1px solid white;
+                padding: 10px;
+                text-align: center;
+                color: white;
+            }
+            #sample2
+            {
+                right: 100px;
+            }
+            #myPanelBtn
+            {
+                right: 180px;
+            }
+            #deviceName::after
+            {
+                content: 'Browser';
+            }
+            @-webkit-keyframes loading
+            {
+	            from { background-position: 0px; }
+	            to { background-position: -1600px; }
+            } 
+            #loadingPanel1
+            {
+                position: absolute;
+                display: flex;
+                align-items: center;
+                width: 100%;
+                height: 100%;
+                visibility: hidden;
+            }
+            #loading
+            {
+                margin: auto;
+                width: 80px;
+                height: 80px;
+                background-image: url('loading.png');
+                animation: loading 700ms steps(20) infinite;
+            }            
+            #loadingPanel2
+            {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                visibility: hidden;
+            }
+            #loading2
+            {
+                position: absolute;
+                width: 80px;
+                height: 80px;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                margin: auto;
+                background-image: url('loading.png');
+                animation: loading 700ms steps(20) infinite;
+            }
+            #myPanel
+                {
+                    position: absolute;
+                    display: inline-block;
+                    width: 375px;
+                    height: 667px;
+                    background-color: red;
+                    left: -375;
+                    transition: left .5s linear;
+                }
+                #listContent
+                {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                }
+                #article
+                {
+                    -webkit-overflow-scrolling: touch;
+                    margin: auto;
+                    height: 200px;
+                    width: 300px;
+                    overflow: auto;
+                }
+                #tts
+                {
+                    position: absolute;
+                    left: 10px;
+                    width: 50px;
+                    height: 20px;
+                    border: 1px solid white;
+                    padding: 10px;
+                    text-align: center;
+                    color: white;
+                }
+            /* iPhone 4s */
+            @media (device-width:320px) and (device-height:480px) and (orientation: portrait)
+            {
+                body
+                {
+                    background-color: pink;
+                }
+            }
+            /* iPhone X */
+            @media (device-height: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait)
+            {
+                body
+                {
+                    background-image:url('iphonex.jpg');
+                    background-color: red;
+                    background-size: 375px 812px !important;
+                    background-repeat:no-repeat;
+                    
+                    /*
+                    padding-top: constant(safe-area-inset-top);
+                    padding-right: constant(safe-area-inset-right);
+                    padding-bottom: constant(safe-area-inset-bottom);
+                    padding-left: constant(safe-area-inset-left);
+                    */
+                }
+            }
+            /* iPhone 8 Plus */
+            @media (device-height: 736px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait)
+            {
+                body
+                {
+                    background: purple;
+                }
+            }
+            /* iPhone 8 */
+            @media (device-height: 667px) and (-webkit-min-device-pixel-ratio: 2)
+            {
+                body
+                {
+                    background: gray;
+                }
+                #deviceName::after
+                {
+                    content: 'iPhone 8';
+                }
+                #myPanel
+                {
+                    width: 375px;
+                    height: 667px;
+                }
+            }
+            /* iPhone 5s */
+            @media (device-height: 568px) and (-webkit-min-device-pixel-ratio: 2)  and (orientation: portrait)
+            {
+                body
+                {
+                    background: yellow;
+                }
+            }
+            /* iPad */
+            @media (device-width: 768px) and (device-height: 1024px) and (orientation: portrait)
+            {
+                body
+                {
+                    background: blue;
+                }
+                #deviceName::after
+                {
+                    content: 'iPad';
+                }
+            }
+            /* iPad */
+            @media (device-width: 1024px) and (device-height: 768px) and (orientation: landscape)
+            {
+                body
+                {
+                    background: red;
+                }
+                #deviceName::after
+                {
+                    content: 'iPad';
+                }
+            }
+            /* iPad Pro 10.5 */
+            @media (device-width: 834px) and (device-height: 1112px) and (orientation: portrait)
+            {
+                body
+                {
+                    background: orange;
+                }
+            }
+            /* iPad Pro */
+            @media (device-width: 1024px) and (device-height: 1366px) and (orientation: portrait)
+            {
+                body
+                {
+                    background: red;
+                }
+            }
+            /* Android 320x640 */
+            @media (device-width: 320px) and (device-height: 640px) and (orientation: portrait)
+            {
+                body
+                {
+                    background: brown;
+                }
+                #deviceName::after
+                {
+                    content: 'Android 320x640';
+                }
+            }
+            /* Android 360x640 */
+            @media (device-width: 360px) and (device-height: 640px) and (orientation: portrait)
+            {
+                body
+                {
+                    background: purple;
+                }
+                #deviceName::after
+                {
+                    content: 'Android 360x640';
+                }
+                #myPanel
+                {
+                    width: 360px;
+                    height: 640px;
+                }
+            }
+        </style>
+        <script>
+            function toggleSample1()
+            {
+                var sample = document.getElementById("loadingPanel1");
+                console.log(sample.style.visibility);
+                var style = window.getComputedStyle(sample);
+                console.log(style.visibility);
+                if(style.visibility == "hidden")
+                {
+                    sample.style.visibility = "visible";
+                }else{
+                    sample.style.visibility = "hidden";
+                }
+            }
+            function toggleSample2()
+            {
+                var sample = document.getElementById("loadingPanel2");
+                console.log(sample.style.visibility);
+                var style = window.getComputedStyle(sample);
+                console.log(style.visibility);
+                if(style.visibility == "hidden")
+                {
+                    sample.style.visibility = "visible";
+                }else{
+                    sample.style.visibility = "hidden";
+                }
+            }
+            function toggleMyPanel()
+            {
+                var panel = document.getElementById("myPanel");
+                var style = window.getComputedStyle(panel);
+                console.log(style.left);
+                if(style.left == "-375px")
+                {
+                    panel.style.left = "0px";
+                }else{
+                    panel.style.left = "-375px";
+                }            
+            }
+            window.onload = function ()
+            {
+                document.addEventListener("touchmove", function(event){
+                    console.log(event.target);
+                    if(!(event.target.id == "article"))
+                        event.preventDefault();
+
+                });
+            }
+            function sayHello()
+            {
+                
+                console.log("sayHello");
+                speechSynthesis.speak(new SpeechSynthesisUtterance('Hello'));
+
+                /*
+                var speech = new SpeechSynthesisUtterance();
+                speech.text = "Hello";
+                speech.volume = 1; // 0 to 1
+                speech.rate = 1; // 0.1 to 9
+                speech.pitch = 1; // 0 to 2, 1=normal
+                speech.lang = "en-US";
+                speechSynthesis.speak(speech);
+                console.log(speech);
+                */
+                
+            }
+        </script>
+    </HEAD>
+    <body>
+        <div id="deviceName">device:</div>
+        <div id="loadingPanel1">
+            <div id="loading"></div>
+        </div>
+        <div id="loadingPanel2">
+            <div id="loading2"></div>
+        </div>
+        
+        <div id="listContent">
+            <div id="article">
+                    米アップルの新型スマートフォン「ｉＰｈｏｎｅＸ（アイフォーンテン）」の予約受け付けが２７日、携帯大手３社で始まった。先月発売の「８」「８プラス」を買い控えたファンもいるとみられる中、調達不足が危惧され、来月３日の発売日に在庫が不足することも懸念される。
+                    
+                    　各社の端末代金と通信料の合計の月額負担を比較すると、２４回払いで通話が５分、データ通信量５ギガバイトで他社からの乗り換えの場合、ＮＴＴドコモは１万４１３円、ＫＤＤＩ（ａｕ）は９８３５円、ソフトバンクは９８１０円となる。ただ、各社とも独自のプランや割引を用意しており、どの社が最安値になるかは使用形態などによって変わる。
+                    
+                    　ドコモはＸ発売に合わせ、購入から１３カ月目に機種変更した場合、最大６万円分がポイント還元されるキャンペーンを導入。家族で２台以上購入すると適用される割引などもある。
+                    
+                    　ａｕは顧客が利用したデータ量に応じて月々の料金が変動する「ピタットプラン」と、４８回払いで２年後に機種変更すると端末代金の残額支払いが不要になるプログラムを選ぶと、月額料金がおさえられる。
+            </div>
+        </div>
+        <div id="myPanel">
+            <div id="tts" onclick="sayHello();">sayHello</div>
+        </div>
+        <div id="sample1" onclick="toggleSample1();">sample1</div>
+        <div id="sample2" onclick="toggleSample2();">sample2</div>
+        <div id="myPanelBtn" ontouchstart="toggleMyPanel();">myPanel</div>
+    </body>
+</html>
+
