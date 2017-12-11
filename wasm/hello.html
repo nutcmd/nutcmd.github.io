@@ -1,0 +1,31 @@
+<html>
+<script>
+     function readUtf8String(memory, pointer) {
+      let s = "";
+      for (i = pointer; memory[i]!==0; i++) {
+        s += String.fromCharCode(memory[i]);
+      }
+      return s;
+    }
+
+request = new XMLHttpRequest();
+request.open('GET', 'hello.wasm');
+request.responseType = 'arraybuffer';
+request.send();
+request.onload = function() 
+{
+    var bytes = request.response;
+    console.log(bytes);
+    let wasmMemory = new WebAssembly.Memory({ initial: 1 });
+    let wasmModule = new WebAssembly.Instance(new WebAssembly.Module(bytes), {env: {memory: wasmMemory}});
+    let sum = wasmModule.exports.add(5,8);
+    console.log('sum:'+sum);
+
+    let memory = new Uint8Array(wasmMemory.buffer);
+    let pointer = wasmModule.exports.hello();
+    console.log('string:'+pointer);
+    alert(readUtf8String(memory, pointer));
+    
+  };
+</script>
+</html>
