@@ -1,5 +1,13 @@
 <html>
 <script>
+var importObject = {
+        imports: {
+          imported_func: function(arg) {
+            console.log(arg);
+          }
+        }
+      };
+      
 request = new XMLHttpRequest();
 request.open('GET', 'hello.wasm');
 request.responseType = 'arraybuffer';
