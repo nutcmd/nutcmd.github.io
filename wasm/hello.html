@@ -3,11 +3,15 @@
 request = new XMLHttpRequest();
 request.open('GET', 'hello.wasm');
 request.responseType = 'arraybuffer';
+request.onreadystatechange = ready;
 request.send();
-   let wasmMemory = new WebAssembly.Memory({ initial: 1 });
-       let wasmModule = new WebAssembly.Instance(request.response, {env: {memory: wasmMemory}});
-           let memory = new Uint8Array(wasmMemory.buffer);
-               let pointer = wasmModule.exports.hello();
-                   alert(readUtf8String(memory, pointer));
+function ready()
+{
+    let wasmMemory = new WebAssembly.Memory({ initial: 1 });
+    let wasmModule = new WebAssembly.Instance(request.response, {env: {memory: wasmMemory}});
+    let memory = new Uint8Array(wasmMemory.buffer);
+    let pointer = wasmModule.exports.hello();
+    alert(readUtf8String(memory, pointer));
+}
 </script>
 </html>
