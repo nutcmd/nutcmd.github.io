@@ -1,0 +1,13 @@
+<html>
+<script>
+request = new XMLHttpRequest();
+request.open('GET', 'hello.wasm');
+request.responseType = 'arraybuffer';
+request.send();
+   let wasmMemory = new WebAssembly.Memory({ initial: 1 });
+       let wasmModule = new WebAssembly.Instance(request.response, {env: {memory: wasmMemory}});
+           let memory = new Uint8Array(wasmMemory.buffer);
+               let pointer = wasmModule.exports.hello();
+                   alert(readUtf8String(memory, pointer));
+</script>
+</html>
