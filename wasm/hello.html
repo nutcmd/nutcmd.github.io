@@ -1,13 +1,5 @@
 <html>
 <script>
-var importObject = {
-        imports: {
-          imported_func: function(arg) {
-            console.log(arg);
-          }
-        }
-      };
-      
 request = new XMLHttpRequest();
 request.open('GET', 'hello.wasm');
 request.responseType = 'arraybuffer';
@@ -16,9 +8,11 @@ request.onload = function()
 {
     var bytes = request.response;
     console.log(bytes);
-    WebAssembly.instantiate(bytes, importObject).then(results => {
-      alert(results.instance.exports.hello());
-    });
+    let wasmMemory = new WebAssembly.Memory({ initial: 1 });
+    let wasmModule = new WebAssembly.Instance(new WebAssembly.Module(bytes), {env: {memory: wasmMemory}});
+    let memory = new Uint8Array(wasmMemory.buffer);
+    let pointer = wasmModule.exports.hello();
+    alert(readUtf8String(memory, pointer));
   };
 </script>
 </html>
