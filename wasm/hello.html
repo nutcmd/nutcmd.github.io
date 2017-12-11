@@ -20,6 +20,7 @@ request.onload = function()
     let wasmModule = new WebAssembly.Instance(new WebAssembly.Module(bytes), {env: {memory: wasmMemory}});
     let memory = new Uint8Array(wasmMemory.buffer);
     let pointer = wasmModule.exports.hello();
+    console.log('string:'+pointer);
     let sum = wasmModule.exports.add(5,8);
     alert(readUtf8String(memory, pointer));
     console.log('sum:'+sum);
