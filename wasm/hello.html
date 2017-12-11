@@ -7,6 +7,7 @@ request.onreadystatechange = ready;
 request.send();
 function ready()
 {
+    console.log(request.response);
     let wasmMemory = new WebAssembly.Memory({ initial: 1 });
     let wasmModule = new WebAssembly.Instance(request.response, {env: {memory: wasmMemory}});
     let memory = new Uint8Array(wasmMemory.buffer);
