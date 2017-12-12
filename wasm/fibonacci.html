@@ -1,0 +1,15 @@
+<html>
+<script>
+request = new XMLHttpRequest();
+request.open('GET', 'fibonacci.wasm');
+request.responseType = 'arraybuffer';
+request.send();
+request.onload = function() 
+{
+    let wasmMemory = new WebAssembly.Memory({ initial: 1 });
+    let wasmModule = new WebAssembly.Instance(new WebAssembly.Module(request.response), {env: {memory: wasmMemory}});
+    let sum = wasmModule.exports.add(10);
+    console.log('fibonacci:'+sum);
+};
+</script>
+</html>
