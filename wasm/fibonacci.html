@@ -14,13 +14,13 @@ request.onload = function()
     let wasmMemory = new WebAssembly.Memory({ initial: 1 });
     let wasmModule = new WebAssembly.Instance(new WebAssembly.Module(request.response), {env: {memory: wasmMemory}});
     var t0 = performance.now();
-    let result = wasmModule.exports.fibonacci(10);
+    let result = wasmModule.exports.fibonacci(20);
     var t1 = performance.now();
     console.log("fibonacci-wasm took " + (t1 - t0) + " milliseconds.");
     console.log('fibonacci-wasm:'+result);
 
     t0 = performance.now();
-    result = fibonacci(10);
+    result = fibonacci(20);
     t1 = performance.now();
     console.log("fibonacci-js took " + (t1 - t0) + " milliseconds.");
     console.log('fibonacci-js:'+result);
